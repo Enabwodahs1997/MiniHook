@@ -10,7 +10,7 @@ import UserInfo from "./components/UserInfo";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
-  const [savedValue, setSavedValue] = useLocalStorage({ name: "", age: 0 });
+  const [savedValue, setSavedValue] = useLocalStorage("user", { name: "", age: 0 });
 
   return (
     <div className="App">
@@ -19,7 +19,7 @@ function App() {
       {isModalOpen && <Modal onClose={() => setIsModalOpen(false)} />}
       <Counter />
       <p className="mt-4 text-lg font-semibold text-slate-800">Username: {savedValue?.name || "(not set)"}</p>
-      <p className="mt-4 text-slate-700">Saved value: {JSON.stringify(savedValue)}</p>
+      <p className="mt-4 text-slate-700">Username and Age: {JSON.stringify(savedValue)}</p>
       <UserInfo user={savedValue} setUser={setSavedValue} />
     </div>
   );

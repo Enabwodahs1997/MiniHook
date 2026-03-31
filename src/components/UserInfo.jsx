@@ -15,8 +15,20 @@ function UserInfo({ user, setUser }) {
   return (
     <div>
       <h2>User Information</h2>
-      <input type="text" placeholder="Name" value={safeUser.name} onChange={updateName} />
-      <input type="number" placeholder="Age" value={safeUser.age} onChange={updateAge} />
+      <input
+        type="text"
+        placeholder="Name"
+        value={safeUser.name}
+        onChange={updateName}
+        className="rounded-md border-2 border-slate-500 px-3 py-2 outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-300"
+      />
+      <input
+        type="number"
+        placeholder="Age"
+        value={safeUser.age}
+        onChange={updateAge}
+        className="rounded-md border-2 border-slate-500 px-3 py-2 outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-300"
+      />
     </div>
   );
 }
